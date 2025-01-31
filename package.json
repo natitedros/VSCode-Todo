@@ -1,0 +1,71 @@
+{
+  "name": "vstodo",
+  "displayName": "VSTodo",
+  "description": "Keeping track of stuff",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "vstodo.helloWorld",
+        "title": "Hello World"
+      },
+      {
+        "command": "vstodo.askQuestion",
+        "category": "VSTodo",
+        "title": "Ask Question"
+      },
+      {
+        "command": "vstodo.refresh",
+        "category": "VSTodo",
+        "title": "Refresh"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack --config ./build/node-extension.webpack.config.js",
+    "watch": "concurrently \"rollup -c -w\" \"webpack --watch\"",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-node-resolve": "^11.0.1",
+    "@rollup/plugin-typescript": "^8.1.0",
+    "@tsconfig/svelte": "^1.0.10",
+    "@types/mocha": "^8.0.4",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.96.0",
+    "@typescript-eslint/eslint-plugin": "^8.17.0",
+    "@typescript-eslint/parser": "^8.17.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "concurrently": "^9.1.2",
+    "eslint": "^9.16.0",
+    "rollup": "^2.3.4",
+    "rollup-plugin-svelte": "^6.0.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "svelte": "^3.31.0",
+    "svelte-check": "^1.1.23",
+    "svelte-preprocess": "^4.6.1",
+    "ts-loader": "^8.0.11",
+    "typescript": "^4.1.2",
+    "webpack": "^5.95.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "vstodo": "file:"
+  }
+}
