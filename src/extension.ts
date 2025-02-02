@@ -2,8 +2,17 @@
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
 import { HelloWorldPanel } from './helloWorldPanel';
+import { SidebarProvider } from "./SidebarProvider";
 
 export function activate(context: vscode.ExtensionContext) {
+
+	const sidebarProvider = new SidebarProvider(context.extensionUri);
+	context.subscriptions.push(
+		vscode.window.registerWebviewViewProvider(
+		"vstodo-sidebar",
+		sidebarProvider
+		)
+	);
 
 	context.subscriptions.push(
 		vscode.commands.registerCommand('vstodo.helloWorld', () => {
@@ -12,14 +21,16 @@ export function activate(context: vscode.ExtensionContext) {
 	);
 
 	context.subscriptions.push(
-		vscode.commands.registerCommand('vstodo.refresh', () => {
-			HelloWorldPanel.kill()
-			HelloWorldPanel.createOrShow(context.extensionUri)
-			setTimeout(()=>{
-				vscode.commands.executeCommand(
-					"workbench.action.toggleDevTools"
-				);
-			}, 500);
+		vscode.commands.registerCommand('vstodo.refresh', async () => {
+			// HelloWorldPanel.kill()
+			// HelloWorldPanel.createOrShow(context.extensionUri)
+			await vscode.commands.executeCommand("workbench.action.closeSidebar")
+			await vscode.commands.executeCommand("workbench.view.extension.vstodo-sidebar-view")
+			// setTimeout(()=>{
+			// 	vscode.commands.executeCommand(
+			// 		"workbench.action.toggleDevTools"
+			// 	);
+			// }, 500);
 		})
 	);
 

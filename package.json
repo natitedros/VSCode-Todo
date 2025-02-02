@@ -12,6 +12,26 @@
   "activationEvents": [],
   "main": "./dist/extension.js",
   "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "vstodo-sidebar-view",
+          "title": "VSTodo",
+          "icon": "media/checklist.svg"
+        }
+      ]
+    },
+    "views": {
+      "vstodo-sidebar-view": [
+        {
+          "type": "webview",
+          "id": "vstodo-sidebar",
+          "name": "VSTodo",
+          "icon": "media/checklist.svg",
+          "contextualTitle": "VSTodo"
+        }
+      ]
+    },
     "commands": [
       {
         "command": "vstodo.helloWorld",
