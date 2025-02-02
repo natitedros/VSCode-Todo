@@ -1,4 +1,16 @@
 <script lang="ts">
+  import { onMount } from "svelte";
+  onMount(() => {
+    window.addEventListener("message", (event) => {
+      const message = event.data; // The json data that the extension sent
+      console.log({ message });
+      switch (message.type) {
+        case "new-todo":
+          todos = [{ todo: message.value, completed: false }, ...todos];
+          break;
+      }
+    });
+  });
   let text = "";
   let todos: Array<{ todo: string; completed: boolean }> = [];
 </script>

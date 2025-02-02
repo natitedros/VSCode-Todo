@@ -46,6 +46,11 @@
         "command": "vstodo.refresh",
         "category": "VSTodo",
         "title": "Refresh"
+      },
+      {
+        "command": "vstodo.addTodo",
+        "category": "VSTodo",
+        "title": "Add Todo from selection"
       }
     ]
   },
