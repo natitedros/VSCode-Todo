@@ -1,71 +1,42 @@
-# vstodo README
+# Todo Sidebar - VS Code Extension
 
-This is the README for your extension "vstodo". After writing up a brief description, we recommend including the following sections.
+A simple and intuitive VS Code extension that allows you to manage your todos directly within the editor. The extension provides a sidebar where you can add, view, and mark todos as completed. You can also add todos directly from text selections in your code.
+
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- **Add Todos**: Easily add todos by typing them into the input box in the sidebar.
+- **Mark as Completed**: Click on a todo to mark it as completed (strikethrough).
+- **Add from Selection**: Highlight text in your editor, right-click, and select "Add to Todo List" to create a todo from the selected text.
 
-For example if there is an image subfolder under your extension project workspace:
 
-\!\[feature X\]\(images/feature-x.png\)
+## Usage
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+1. Open the **Todo Sidebar** by clicking on the List icon in the Activity Bar.
+2. To add a todo:
+   - Type your todo in the input box at the top of the sidebar and press `Enter`.
+   - Alternatively, highlight text in your editor, right-click, and select **Add to Todo List**.
+3. To mark a todo as completed, simply click on it in the sidebar. The todo will be crossed out.
+4. To remove a todo, hover over it and click the trash icon that appears.
+   
 
-## Requirements
+## Contributing
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+Contributions are welcome! If you'd like to contribute to this project, please follow these steps:
 
-## Extension Settings
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/YourFeatureName`).
+3. Commit your changes (`git commit -m 'Add some feature'`).
+4. Push to the branch (`git push origin feature/YourFeatureName`).
+5. Open a pull request.
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+Please ensure your code follows the project's coding standards and includes appropriate tests.
 
-For example:
 
-This extension contributes the following settings:
+## Acknowledgements
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+- Inspired by the need for a simple todo list within VS Code.
 
 ---
 
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+**Enjoy coding and staying organized!** 🚀
